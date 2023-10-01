@@ -59,6 +59,7 @@ const postsSlice = createSlice({
         },
         reactionAdded(state, action) {
             const { postId, reaction } = action.payload
+            // state is a posts dont confuse because this slice have only one state that is array[] that's why we mentions like that
             const existingPost = state.find(post => post.id === postId)
             if (existingPost) {
                 existingPost.reactions[reaction]++
